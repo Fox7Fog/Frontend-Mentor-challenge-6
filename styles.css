@@ -1,0 +1,504 @@
+html,
+* {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 0%, 98%);  
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: ". . . ."
+    ". app description ."
+    ". . . .";
+    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-rows: 10rem 41rem 10rem;
+    column-gap: 5rem;
+    place-content: center;
+    overflow-x: hidden;
+}
+
+.background-element-1 {
+    grid-column:  1 / span 2;
+    grid-row:  1 / span 2;
+    justify-content: start;
+    align-items: start;
+    z-index: -1;
+    display: block;
+    width: 60%;
+    height: 41rem;
+    background: linear-gradient(0deg, rgba(136,56,255,1) 9%, rgba(233,66,255,1) 100%);
+    border-radius: 0px 0px 50% 50%;
+    margin: 0;
+    padding: 0; 
+}
+
+.background-element-2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    align-self: end;
+    justify-self: end;
+    z-index: -1;
+    display: block;
+    width: 60%;
+    height: 41rem;
+    background: hsl(270, 20%, 96%);
+    border-radius: 50% 50% 0px 0px;
+    margin: 0;
+    padding: 0; 
+}
+
+.description {
+    grid-area: description;
+    width: fit-content;
+    text-align: left;
+    height: 41rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.description h1 {
+    font-size: 2.5rem;
+    color: hsl(271, 36%, 24%);
+    padding: 1.5rem 0;
+}
+
+.description p {
+    color: hsl(270, 7%, 64%);
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+.app {
+    grid-area: app;
+    position: relative;
+    width: 21rem;
+    height: 41rem;
+    border-style: solid;
+    border-color: white;
+    border-width: 15px;
+    border-radius: 50px;
+    background-color: hsl(270, 20%, 96%);
+    justify-self: center; 
+    box-shadow: 10px 17px 57px -19px rgba(0,0,0,0.63);
+    -webkit-box-shadow: 10px 17px 57px -19px rgba(0,0,0,0.63);
+    -moz-box-shadow: 10px 17px 57px -19px rgba(0,0,0,0.63);
+}
+
+.profile-info {
+    width: 100%;
+    height: 5.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;/*space-around*/;
+    gap: 0.5rem;
+    align-items: center;
+    color: hsl(276, 100%, 81%);
+    background: rgb(136,56,255);
+    background: linear-gradient(90deg, rgba(136,56,255,1) 25%, rgba(233,66,255,1) 100%);
+    border-radius: 40px 40px 8px 8px;
+    padding-top: 2rem;
+    padding-left: 1rem;
+}
+
+.profile-image {
+    width: 12%;
+    border: solid;
+    border-width: 1px;
+    border-color: hsl(276, 100%, 81%);
+    border-radius: 50%;
+}
+
+.name h1 {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.name p {
+    font-size: 0.6rem;
+}
+
+.go-back-arrow {
+    text-decoration: none;
+    color: hsl(276, 100%, 81%);
+}
+
+.profile-info button {
+    background-color: transparent;
+    border: none;
+}
+
+.go-back-arrow {
+    width: 0.5rem;
+    padding: 0;
+}
+.go-back-arrow img {
+    width: 0.5rem;
+    filter: invert(51%) sepia(100%) saturate(187%) hue-rotate(230deg) brightness(110%) contrast(111%);
+}
+
+.dotted-menu {
+    width: 7rem;
+    padding: 0;
+    text-align: right;
+}
+
+.dotted-menu img {
+    width: 0.2rem;
+    filter: invert(51%) sepia(100%) saturate(187%) hue-rotate(230deg) brightness(110%) contrast(111%);
+}
+
+.white-box {
+    position: absolute;
+    left: 21%;
+    top: -0.5%;
+    width: 10rem;
+    height: 1.5rem;
+    background-color: white;
+    border-radius: 0 0 40px 40px;
+}
+
+.chat {
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.samuel-reply-1,
+.samuel-reply-2,
+.samuel-reply-3 {
+    width: 60%;
+    height: fit-content;
+    color: hsl(276, 55%, 52%);
+    font-size: 0.6rem;
+    background-color: hsl(280, 30%, 92%);
+    border-radius: 12px 12px 12px 4px;
+    padding: 0.5rem;
+    line-height: 1.5;
+}
+
+.customer-reply-1,
+.customer-reply-2 {
+    width: 60%;
+    height: fit-content;
+    color: hsl(271, 15%, 43%);
+    font-size: 0.6rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 12px 12px 4px 12px;
+    padding: 0.5rem; 
+    line-height: 1.5;
+    justify-self: end;
+}
+
+.customer-reply-2 {
+    width: fit-content;
+}
+
+.dog-pictures {
+    justify-self: end;
+    /*width: 60%;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+.dog-pictures img {
+    width: 3rem;
+    border-radius: 25%;
+}
+
+.container {
+    width: 70%;
+    height: 2.2rem;
+    color: hsl(0, 0%, 100%);
+    font-size: 0.6rem;
+    background:  rgba(233,66,255,1);
+    background: linear-gradient(90deg,  rgba(233,66,255,1) 35%, rgba(136,56,255,1) 100%);
+    border-radius: 12px 12px 12px 4px;
+    padding: 0.6rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container input {
+    appearance: none;
+    border-radius: 50%;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 1px solid hsl(289, 100%, 72%);
+    transition: 0.2s all linear;
+    margin-right: 5px;
+}
+
+.container input:checked {
+    border: 8px solid hsl(280, 30%, 92%);
+  }
+
+.container div {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.duration {
+    font-size: 0.6rem;
+}
+
+.type-a-message {
+    width: 90%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 50px;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.type-a-message p {
+    color: hsl(206, 6%, 79%);
+    font-size: 0.7rem;
+    padding-left: 0.5rem;
+}
+
+.type-a-message button {
+    width: 1.9rem;
+    height: 1.9rem;
+    background-color: hsl(271, 36%, 24%);
+    border: 1px solid hsl(271, 36%, 24%);
+    border-radius: 50%;
+    padding: 0;
+}
+
+.type-a-message button img {
+    width: 0.7rem;
+    padding-top: 0.2rem;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(63%) saturate(14%) hue-rotate(262deg) brightness(103%) contrast(100%);
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        width: 100%;
+        height: 61rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        width: 100%;
+        height: 61rem;
+        display: grid;
+        grid-template-areas: ". . ."
+        ". app ."
+        ". description ."
+        ". . .";
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 5rem 32rem 16rem 5rem;
+        row-gap: 1rem;
+        place-content: center;
+        overflow-x: hidden;
+    }
+
+    .background-element-1 {
+        width: 50%;
+        height: 30rem;
+    }
+
+    .background-element-2 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 5;
+        height: 30rem;
+        width: 50%;
+    }
+
+    .description {
+        grid-area: description;
+        justify-self: center;
+        width: max(60%, 18rem);
+        height: 16rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding-top: 0;    
+    }
+
+    .description h1 {
+        font-size: 2.4rem;
+        width: 100%;
+        font-weight: 500;
+        padding-top: 1rem;
+    }
+
+    .description p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .app {
+        grid-area: app;
+        position: relative;
+        width: 15rem;
+        height: 31rem;
+        border-width: 10px;
+        border-radius: 30px;  
+    }
+    
+    .profile-info {
+        width: 100%;
+        height: 4.2rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;/*space-around*/;
+        gap: 0.5rem;
+        align-items: center;
+        color: hsl(276, 100%, 81%);
+        background: rgb(136,56,255);
+        background: linear-gradient(90deg, rgba(136,56,255,1) 25%, rgba(233,66,255,1) 100%);
+        border-radius: 25px 25px 8px 8px;
+        padding-top: 1rem;
+        padding-left: 1rem;
+    }
+
+    .name h1 {
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+    
+    .name p {
+        font-size: 0.5rem;
+    }
+  
+    .dotted-menu {
+        width: 3.5rem;
+        padding: 0;
+        text-align: right;
+    }
+    
+    .dotted-menu img {
+        width: 0.15rem;
+    }
+    
+    .white-box {
+        position: absolute;
+        left: 21%;
+        top: -0.5%;
+        width: 8.5rem;
+        height: 1.25rem;
+        background-color: white;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .chat {
+        display: grid;
+        align-items: center;
+        row-gap: 0.5rem;
+        column-gap: 1rem;
+        padding: 0.5rem;
+    }
+    
+    .samuel-reply-1,
+    .samuel-reply-2,
+    .samuel-reply-3 {
+        font-size: 0.5rem;
+        padding: 0.4rem;
+    }
+    
+    .customer-reply-1,
+    .customer-reply-2 {
+        font-size: 0.5rem;
+        padding: 0.4rem;
+    }
+    
+    .dog-pictures img {
+        width: 2.8rem;
+        border-radius: 25%;
+    }
+    
+    .container {
+        height: 2.1rem;
+    }
+   
+    .duration {
+        font-size: 0.5rem;
+    }
+
+    .price {
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+    
+    .type-a-message {
+        width: 100%;
+        height: 2rem;
+        padding: 0.5rem;
+    }
+    
+    .type-a-message p {
+        color: hsl(206, 6%, 79%);
+        font-size: 0.6rem;
+        padding-left: 0.5rem;
+    }
+    
+    .type-a-message button {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .background-element-1 {  
+        width: 70%;
+        height: 30rem;
+    }
+
+    .background-element-2 {
+        width: 70%;
+        height: 30rem;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 5;
+        align-self: end;
+        justify-self: end;
+    }
+
+}
+
